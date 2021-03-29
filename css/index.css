@@ -64,6 +64,10 @@ body {
     transition: .3s ease-in-out;
 }
 
+.login__input:focus + .login__input-border::after {
+    width: 100%;
+}
+
 .login__submit {
     height: 48px;
     width: 100%;
@@ -77,6 +81,10 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: .5s ease-in-out;
+}
+
+.login__submit:hover {
+    background-position: right;
 }
 
 .login__reset {
