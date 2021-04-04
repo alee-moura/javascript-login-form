@@ -1,4 +1,18 @@
 const init = () => {
+    const validateEmail = (event) => {
+        const input = event.currentTarget
+        const regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        const emailTest = regex.test(input.value);
+
+        if(!emailTest) {
+            submitButton.setAttribute('disable', 'disabled');
+            input.nextElementSibling.classList.add('error');
+        } else {
+            submitButton.removeAttribute('disable', 'disabled');
+            input.nextElementSibling.classList.remove('error');
+        }
+    }
+
     const inputEmail = document.querySelector('input[type="email"]')
     const inputPassword = document.querySelector('input[type="password"]')
     const submitButton = document.querySelector('.login__submit')
