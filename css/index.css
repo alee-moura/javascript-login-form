@@ -1,6 +1,9 @@
 :root {
     --input-linear: linear-gradient(120deg, #e75590, #00c2cb);
+    --input-error: red;
     --button-linear: linear-gradient(120deg, #e75590, #00c2cb, #e75590);
+    --button-disabled: #acacac;
+    --button-success: #12976b;
     --white: #ffffff;
     --black: #303030;
     --grey: #929292;
@@ -77,6 +80,10 @@ body {
     width: 100%;
 }
 
+.login__input-border.error {
+    background: var(--input-error);
+}
+
 .login__submit {
     height: 48px;
     width: 100%;
@@ -92,8 +99,21 @@ body {
     transition: .5s ease-in-out;
 }
 
+.login__submit.disabled {
+    background: var(--button-disabled);
+    cursor: not-allowed;
+}
+
 .login__submit:hover {
     background-position: right;
+}
+
+.login__submit.error {
+    background: var(--input-error);
+}
+
+.login__submit.success {
+    background: var(--button-success);
 }
 
 .login__reset {
